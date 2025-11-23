@@ -17,6 +17,8 @@ The Coding Agent writes code in multiple languages, validates correctness, build
 - 🔨 Build/compile on command
 - 💡 Intelligent suggestions and improvements
 - 🎯 Stays on task while being entertaining
+- 🧠 Problem-solving assistance ("think" feature)
+- 📊 Activity tracking and statistics
 
 **Quick Start:**
 ```bash
@@ -30,7 +32,8 @@ python example_coding_agent.py
 python test_coding_agent.py
 ```
 
-📖 **[Read the full Coding Agent documentation →](CODING_AGENT.md)**
+📖 **[5-Minute Quick Start Guide →](QUICKSTART.md)**  
+📖 **[Full Coding Agent Documentation →](CODING_AGENT.md)**
 
 ---
 
@@ -78,10 +81,11 @@ All tests should pass with ✅ indicators.
 
 ```
 .
-├── coding_agent.py          # Coding Agent implementation
+├── coding_agent.py          # Coding Agent implementation (500+ lines)
 ├── test_coding_agent.py     # Coding Agent tests (18 tests)
-├── example_coding_agent.py  # Coding Agent usage examples
+├── example_coding_agent.py  # Coding Agent usage examples (10 scenarios)
 ├── CODING_AGENT.md          # Coding Agent documentation
+├── QUICKSTART.md            # 5-minute quick start guide
 ├── startup_plan.py          # Startup Plan implementation
 ├── test_startup_plan.py     # Startup Plan tests (8 tests)
 ├── example_usage.py         # Startup Plan examples
