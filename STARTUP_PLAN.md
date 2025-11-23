@@ -63,13 +63,20 @@ plan.add_team_member(
 print(plan.get_summary())
 ```
 
-### Running the Example
+### Running Examples
 
 ```bash
+# Run the built-in example
 python startup_plan.py
+
+# Run the practical usage example
+python example_usage.py
+
+# Run the test suite
+python test_startup_plan.py
 ```
 
-This will create and display an example startup plan with sample data.
+These commands will demonstrate the various features and capabilities of the startup plan module.
 
 ## Structure
 
@@ -83,10 +90,27 @@ The `StartupPlan` class provides these main methods:
 - `get_summary()` - Get a formatted summary
 - `get_next_milestone()` - Get the next uncompleted milestone
 
+## Files in This Project
+
+- `startup_plan.py` - Main module with StartupPlan class implementation
+- `STARTUP_PLAN.md` - This documentation file
+- `example_usage.py` - Practical usage example demonstrating real-world scenarios
+- `test_startup_plan.py` - Comprehensive test suite (8 tests)
+
 ## Requirements
 
 - Python 3.6 or higher
 - No external dependencies (uses only Python standard library)
+
+## Testing
+
+Run the test suite to verify the implementation:
+
+```bash
+python test_startup_plan.py
+```
+
+All tests should pass with ✅ indicators.
 
 ## License
 
