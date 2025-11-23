@@ -366,14 +366,16 @@ Problem: {problem}
         if todos:
             suggestions.append(f"📝 Found TODO/FIXME comments on lines: {todos}")
         
-        # Check for magic numbers (simple check)
-        if re.search(r'\b\d{3,}\b', content):
+        # Check for magic numbers (simple check, excluding common valid patterns)
+        # Exclude years (19xx, 20xx), HTTP codes (2xx, 3xx, 4xx, 5xx), common ports
+        if re.search(r'\b\d{4,}\b', content) and not re.search(r'\b(19|20)\d{2}\b', content):
             suggestions.append("🔢 Consider using named constants instead of magic numbers!")
         
         # Check for duplicated code patterns
         if len(lines) > 10:
-            line_set = set(line.strip() for line in lines if line.strip())
-            if len(line_set) < len([l for l in lines if l.strip()]) * 0.8:
+            non_empty_lines = [line.strip() for line in lines if line.strip()]
+            line_set = set(non_empty_lines)
+            if len(line_set) < len(non_empty_lines) * 0.8:
                 suggestions.append("♻️ Looks like there might be some duplicated code. DRY it up!")
         
         if not suggestions:

@@ -109,8 +109,8 @@ def test_validate_unbalanced_braces():
     """Test validation catches unbalanced braces"""
     agent = CodingAgent("ValidBot")
     
-    # Write code with unbalanced braces
-    code = "function test() {\n    console.log('test');\n"  # Missing closing brace
+    # Write code with unbalanced braces (intentionally missing closing brace)
+    code = "function test() {\n    console.log('test');\n"  # INTENTIONAL ERROR: Missing }
     agent.write_code('javascript', code, 'unbalanced_test.js')
     
     validation = agent.validate_code('unbalanced_test.js')
@@ -159,8 +159,8 @@ def test_build_invalid_python():
     """Test building invalid Python code"""
     agent = CodingAgent("BuildBot")
     
-    # Write invalid Python code
-    code = "print('Missing closing quote)\n"
+    # Write invalid Python code (intentionally missing closing quote)
+    code = "print('Missing closing quote)\n"  # INTENTIONAL ERROR: Unmatched quote
     agent.write_code('python', code, 'invalid_test.py')
     
     # Try to build it
