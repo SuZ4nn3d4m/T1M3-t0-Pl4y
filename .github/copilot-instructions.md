@@ -30,7 +30,7 @@ This is a Python project that provides a `StartupPlan` class for organizing and 
 - Run tests with: `python test_startup_plan.py`
 - Tests use simple assertions with print statements for pass/fail indicators
 - Each test function should be prefixed with `test_`
-- Use ✓ emoji for passed tests
+- Use ✓ symbol for individual passed tests and ✅ emoji for final success message
 
 ## Key Patterns
 
