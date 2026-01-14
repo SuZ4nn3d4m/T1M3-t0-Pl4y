@@ -122,18 +122,21 @@ Before submitting changes, verify:
 ### Example: Adding a New Field
 ```python
 # In __init__:
-self.new_field: List[Dict] = []  # Note: Use List[Dict] to match existing codebase style
+self.new_field: List[Dict] = []  # Dictionary structure documented below
 
 # Add a method to populate it:
 def add_new_item(self, name: str, details: str) -> None:
     """Add a new item to the new field"""
+    # Create dictionary with consistent key structure
     item = {
-        'name': name,
-        'details': details,
-        'created_at': datetime.now()
+        'name': name,          # str: Item name
+        'details': details,    # str: Item details
+        'created_at': datetime.now()  # datetime: Creation timestamp
     }
     self.new_field.append(item)
 ```
+
+**Note**: Use `List[Dict]` to match existing codebase style. While more specific types like `TypedDict` could be used, the current codebase prioritizes simplicity. Document the expected dictionary keys in comments as shown above.
 
 ## Security Considerations
 
