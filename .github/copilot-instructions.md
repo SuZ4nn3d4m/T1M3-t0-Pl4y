@@ -122,7 +122,7 @@ Before submitting changes, verify:
 ### Example: Adding a New Field
 ```python
 # In __init__:
-self.new_field: List[Dict] = []
+self.new_field: List[Dict] = []  # Note: Use List[Dict] to match existing codebase style
 
 # Add a method to populate it:
 def add_new_item(self, name: str, details: str) -> None:
