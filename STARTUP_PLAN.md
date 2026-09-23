@@ -82,11 +82,11 @@ These commands will demonstrate the various features and capabilities of the sta
 
 The `StartupPlan` class provides these main methods:
 
-- `set_vision(vision: str)` - Set the company vision
-- `set_mission(mission: str)` - Set the company mission
-- `add_milestone(title, description, target_date)` - Add a new milestone
-- `complete_milestone(title)` - Mark a milestone as complete
-- `add_team_member(name, role, skills)` - Add a team member
+- `set_vision(vision: str) -> bool` - Set the company vision and return whether the update succeeded
+- `set_mission(mission: str) -> bool` - Set the company mission and return whether the update succeeded
+- `add_milestone(title, description, target_date) -> bool` - Add a new milestone and return success/failure
+- `complete_milestone(title) -> bool` - Mark a milestone as complete
+- `add_team_member(name, role, skills) -> bool` - Add a team member and return success/failure
 - `get_summary()` - Get a formatted summary
 - `get_next_milestone()` - Get the next uncompleted milestone
 
