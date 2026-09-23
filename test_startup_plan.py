@@ -65,6 +65,32 @@ def test_add_team_member():
     print("✓ test_add_team_member passed")
 
 
+def test_mutation_success_flags_and_validation():
+    """Test boolean success flags and validation for mutating methods"""
+    plan = StartupPlan("TestCo", "Test Founder")
+    assert plan.set_vision("A new vision") is True
+    assert plan.set_mission("A new mission") is True
+    target_date = datetime.now() + timedelta(days=30)
+    assert plan.add_milestone("Roadmap", "Launch plan", target_date) is True
+    assert plan.add_team_member("Jane Doe", "Designer", ["UX", "Research"]) is True
+
+    assert plan.set_vision("") is False
+    assert plan.add_milestone("", "desc", target_date) is False
+    assert plan.add_team_member("Jane Doe", "Designer", ["UX", 7]) is False
+    print("✓ test_mutation_success_flags_and_validation passed")
+
+
+def test_complete_milestone_case_insensitive():
+    """Test milestone completion matching is case-insensitive."""
+    plan = StartupPlan("TestCo", "Test Founder")
+    target_date = datetime.now() + timedelta(days=30)
+    plan.add_milestone("Roadmap", "Launch plan", target_date)
+
+    assert plan.complete_milestone("roadmap") is True
+    assert plan.milestones[0]['completed'] is True
+    print("✓ test_complete_milestone_case_insensitive passed")
+
+
 def test_get_summary():
     """Test getting summary"""
     plan = StartupPlan("TestCo", "Test Founder")
@@ -120,6 +146,8 @@ def run_all_tests():
     test_add_milestone()
     test_complete_milestone()
     test_add_team_member()
+    test_mutation_success_flags_and_validation()
+    test_complete_milestone_case_insensitive()
     test_get_summary()
     test_get_next_milestone()
     test_example_plan()
